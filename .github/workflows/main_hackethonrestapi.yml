@@ -29,6 +29,10 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: set env dependencies
+        run: export MONGO_STR="mongodb+srv://tuesday-admin:SGSSfS5JsIx8BiwR@test.vek0t.azure.mongodb.net/product-service?retryWrites=true&w=majority&readPreference=secondary"
+      - name: set evn dependencies 2
+        run: export OPENAI_API_KEY="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"
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
@@ -53,7 +57,10 @@ jobs:
         with:
           name: python-app
           path: .
-          
+      - name: set env dependencies
+        run: export MONGO_STR="mongodb+srv://tuesday-admin:SGSSfS5JsIx8BiwR@test.vek0t.azure.mongodb.net/product-service?retryWrites=true&w=majority&readPreference=secondary"
+      - name: set evn dependencies 2
+        run: export OPENAI_API_KEY="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"
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
